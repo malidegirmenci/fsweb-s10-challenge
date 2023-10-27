@@ -1,12 +1,24 @@
 import React from "react";
 import { formatDistanceToNow } from "date-fns";
 import { tr } from "date-fns/locale";
-
+import { useDispatch } from "react-redux";
+import { removeNote } from "../store/actions/noteActions";
+import { toast } from "react-toastify";
 export default function Post({ item }) {
-
-  function handleSil() {
-    // burada ilgili eylemi dispatch edin
-    // sonra toast mesajı gösterin
+  const dispatch = useDispatch();
+  function handleRemoveNote(id) {
+    dispatch(removeNote(id))
+    const notify = () => toast.info("Note removed",{
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
+    notify();
   }
 
   return (
@@ -24,7 +36,7 @@ export default function Post({ item }) {
         </p>
       ))}
 
-      <button className="text-xs text-amber-600 mt-4 underline" onClick={handleSil}>
+      <button className="text-xs text-amber-600 mt-4 underline" onClick={() => handleRemoveNote(item.id)}>
         Bu notu sil
       </button>
     </div>
