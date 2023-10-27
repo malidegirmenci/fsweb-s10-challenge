@@ -52,12 +52,12 @@ LocalStorage'ı minik bir veritabanı olarak kullanmak için uygulama eğer vars
 
 Tarayıcınızda daha önceden `localStorage` içerisinde Minnet Günlüğü uygulaması tarafından depolanmış veri varsa, uygulamanız bu verileri kullanarak açılmalıdır. (Bu sayede tarayıcınızı kapatmış ya da yenilemiş olsanız bile notlarınız kaybolmaz.)
 
-- [ ] `reducer.js` dosyasındaki localStorage ile ilgili fonksiyonları inceleyin ve yapmak istediğiniz eylemi bu fonksiyonları kullanarak nasıl yapabileceğinizi kurgulayın. gerekli fonksiyonları bulacaksınız, bunları inceleyin ve kullanın. kontrol edin ve eğer varsa `redux store`'unuzu bu verilerle başlatacak değişiklikleri yapın.
+- [X] `reducer.js` dosyasındaki localStorage ile ilgili fonksiyonları inceleyin ve yapmak istediğiniz eylemi bu fonksiyonları kullanarak nasıl yapabileceğinizi kurgulayın. gerekli fonksiyonları bulacaksınız, bunları inceleyin ve kullanın. kontrol edin ve eğer varsa `redux store`'unuzu bu verilerle başlatacak değişiklikleri yapın.
 
-- [ ] Reducer içerisinde yaptığnız değişiklikler sonrasında localStorage içerisinde de aynı değişiklikleri yansıtmak için reducer fonksiyonunuza gerekli kodları ekleyin.
+- [X] Reducer içerisinde yaptığnız değişiklikler sonrasında localStorage içerisinde de aynı değişiklikleri yansıtmak için reducer fonksiyonunuza gerekli kodları ekleyin.
 
 ### Esnek Görevler
 
-- [ ] En son eklenen notun en yukarıda görünmesi için neler yapılabilir? Düşünün ve uygulayın.
+- [X] En son eklenen notun en yukarıda görünmesi için neler yapılabilir? Düşünün ve uygulayın.
 - [ ] Bu uygulamada kullanılabilecek başka tasarımlar arayın ve buna uygun olarak layoutı ve renkleri değiştirin.
 - [ ] Uygulamaya yeni fonksiyonellikler eklemeye çalışın.
