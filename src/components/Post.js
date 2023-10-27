@@ -2,12 +2,12 @@ import React from "react";
 import { formatDistanceToNow } from "date-fns";
 import { tr } from "date-fns/locale";
 import { useDispatch } from "react-redux";
-import { removeNote } from "../store/actions/noteActions";
+import { removeNoteAPI } from "../store/actions/noteActions";
 import { toast } from "react-toastify";
 export default function Post({ item }) {
   const dispatch = useDispatch();
   function handleRemoveNote(id) {
-    dispatch(removeNote(id))
+    dispatch(removeNoteAPI(id))
     const notify = () => toast.info("Note removed",{
       position: "top-right",
       autoClose: 2000,

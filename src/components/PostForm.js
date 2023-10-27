@@ -4,7 +4,7 @@ import { nanoid } from "nanoid";
 import { useHistory } from "react-router";
 import Gratitude from "./../assets/grForm.png";
 import { useDispatch } from "react-redux";
-import { addNote } from "../store/actions/noteActions";
+import { addNoteAPI } from "../store/actions/noteActions";
 import { toast } from "react-toastify";
 
 export default function PostForm() {
@@ -24,7 +24,7 @@ export default function PostForm() {
         .filter((v) => v !== "")
         .join("|"),
     };
-    dispatch(addNote(newNote));
+    dispatch(addNoteAPI(newNote));
     const notify = () => toast.success("Note added",{
       position: "top-right",
       autoClose: 2000,
