@@ -3,6 +3,8 @@ import { useForm } from "react-hook-form";
 import { nanoid } from "nanoid";
 import { useHistory } from "react-router";
 import Gratitude from "./../assets/grForm.png";
+import { useDispatch } from "react-redux";
+import { addNote } from "../store/actions/noteActions";
 
 export default function PostForm() {
   const {
@@ -12,16 +14,16 @@ export default function PostForm() {
   } = useForm({ mode: "onChange" });
 
   const history = useHistory();
-
+  const dispatch = useDispatch();
   function onSubmit(data) {
-    const yeniNot = {
+    const newNote = {
       id: nanoid(),
       date: Date(),
       body: Object.values(data)
         .filter((v) => v !== "")
         .join("|"),
     };
-
+    dispatch(addNote(newNote));
     // burada ilgili eylemi dispatch edin
     // toast mesajı gösterin
     // sonra aşağıdaki satırı aktifleştirin
