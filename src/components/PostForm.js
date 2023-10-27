@@ -25,9 +25,6 @@ export default function PostForm() {
         .join("|"),
     };
     dispatch(addNote(newNote));
-    // burada ilgili eylemi dispatch edin
-    // toast mesajı gösterin
-    // sonra aşağıdaki satırı aktifleştirin
     const notify = () => toast.success("Note added",{
       position: "top-right",
       autoClose: 2000,
