@@ -10,16 +10,20 @@ const initialNotes = {
     ],
 }
 const s10chLocalStorageKey = "s10ch";
-export const noteReducer = (state = initialNotes, action) => {
+export const noteReducer = (state = getInitialNotes(s10chLocalStorageKey), action) => {
     switch (action.type){
         case ADD_NOTE:
-            return {...state,
+            const addedNote = {...state,
                 notes:[action.payload, ...state.notes]
             }
+            localStorageStateWrite(s10chLocalStorageKey,addedNote)
+            return addedNote
         case REMOVE_NOTE:
-            return {...state,
+            const removedNote = {...state,
                 notes: state.notes.filter((note) => action.payload !== note.id)
             }
+            localStorageStateWrite(s10chLocalStorageKey,removedNote)
+            return removedNote
         default:
             return state;
     }
