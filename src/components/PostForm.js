@@ -5,6 +5,7 @@ import { useHistory } from "react-router";
 import Gratitude from "./../assets/grForm.png";
 import { useDispatch } from "react-redux";
 import { addNote } from "../store/actions/noteActions";
+import { toast } from "react-toastify";
 
 export default function PostForm() {
   const {
@@ -27,7 +28,18 @@ export default function PostForm() {
     // burada ilgili eylemi dispatch edin
     // toast mesajı gösterin
     // sonra aşağıdaki satırı aktifleştirin
-    // setTimeout(() => history.push("/notlar"), 2000);
+    const notify = () => toast.success("Note added",{
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
+    notify();
+    setTimeout(() => history.push("/notlar"), 2000);
   }
 
   const inputCx = "border border-zinc-300 h-9 rounded-none text-sm px-2 w-full";
