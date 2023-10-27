@@ -1,25 +1,3 @@
-/*
-import { NOT_EKLE, NOT_SIL } from "../actions/noteActions"
-
-const initial = {
-    notes:[],
-}
-export const noteReducer = (state = initial, action) => {
-    switch (action.type){
-        case NOT_EKLE:
-            return {...state,
-                notes:[action.payload, ...state.notes]
-            }
-        case NOT_SIL:
-            return {...state,
-                notes: state.notes.filter((note) => action.payload !== note.id)
-            }
-        default:
-            return state;
-    }
-}
-
-*/
 import { ADD_NOTE, REMOVE_NOTE } from "../actions/noteActions";
 
 const initialNotes = {
