@@ -19,11 +19,11 @@ export const noteReducer = (state = getInitialNotes(s10chLocalStorageKey), actio
             localStorageStateWrite(s10chLocalStorageKey,addedNote)
             return addedNote
         case REMOVE_NOTE:
-            const removedNote = {...state,
+            const remainingNote = {...state,
                 notes: state.notes.filter((note) => action.payload !== note.id)
             }
-            localStorageStateWrite(s10chLocalStorageKey,removedNote)
-            return removedNote
+            localStorageStateWrite(s10chLocalStorageKey,remainingNote)
+            return remainingNote
         default:
             return state;
     }
