@@ -25,6 +25,7 @@ export default function PostForm() {
         .join("|"),
     };
     dispatch(addNoteAPI(newNote));
+    
     const notify = () => toast.success("Note added",{
       position: "top-right",
       autoClose: 2000,
@@ -42,12 +43,10 @@ export default function PostForm() {
   const inputCx = "border border-zinc-300 h-9 rounded-none text-sm px-2 w-full";
 
   return (
-    <div className="flex flex-col sm:flex-row beyazKutu">
+    <div className="flex flex-col sm:flex-row beyazKutu rounded-lg">
       <div className="flex-1">
-        <img src={Gratitude} alt="" className="block object-cover h-full" />
+        <img src={Gratitude} alt="" className="block object-cover h-full rounded-l-lg" />
       </div>
-
-
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col gap-3 p-8 flex-1"
@@ -89,7 +88,7 @@ export default function PostForm() {
 
         <button
           type="submit"
-          className="myButton"
+          className="myButton rounded"
         >
           Ekle
         </button>
