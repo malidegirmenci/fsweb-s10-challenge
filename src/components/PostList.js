@@ -5,11 +5,11 @@ const PostList = () => {
   const notes = useSelector((store) => store.noteReducer.notes);
   
   return notes.length === 0 ? (
-    <div className="beyazKutu text-center p-6">Hiç notunuz yok</div>
+    <div className="beyazKutu text-center p-6 rounded-lg">Hiç notunuz yok</div>
   ) : (
-    <div>
-      {notes.map((not) => (
-        <Post item={not} key={not.id} />
+    <div >
+      {notes.map((note,i) => (
+        <Post item={note} key={`${i}${note.id}`} />
       ))}
     </div>
   );
