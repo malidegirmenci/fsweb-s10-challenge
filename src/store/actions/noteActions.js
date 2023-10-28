@@ -16,12 +16,9 @@ export const addNoteAPI = (newNote) => dispatch => {
   axios
     .post("https://httpbin.org/anything", newNote)
     .then((res) => {
-      
       if (res.status === 200) {
-        // res.data objesi içerisinden ihtiyaç duyduğunuz değeri bulun ve oluşturduğunuz notEkle ile dispatch edin
-        
-        dispatch(addNote(newNote));
-        console.log("data",res);
+        console.log("res",res);
+        dispatch(addNote(res.data.json));
       }
     })
     .catch((error) => console.log(error));
@@ -33,9 +30,8 @@ export const removeNoteAPI = (id) => dispatch => {
     .delete("https://httpbin.org/anything", { data: id })
     .then((res) => {
       if (res.status === 200) {
-        // res.data objesi içerisinden ihtiyaç duyduğunuz değeri bulun ve oluşturduğunuz notSil ile dispatch edin 
-        dispatch(removeNote(id))
-        console.log("removed note", res)
+        dispatch(removeNote(res.data.data))
+        //console.log("removed note", res)
       }
     })
     .catch((error) => console.log(error));
